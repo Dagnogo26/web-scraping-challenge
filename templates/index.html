@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Srape New Data</a></p>
+    </div>
+
+    <!-- Phone Listings -->
+    <div class="row" id="latest News">
+      <div class="col-md-12">
+        <h1>Latest Mars News</h1>  
+        <h4 class="title">{{mars.news_title}}</h4>
+        <p>{{mars.summary}}</p>
+        
+      </div>
+  
+  <br>
+  <div class="row" >
+    <div class="col-md-7">
+      <h1>Featured Mars Image</h1>  
+      <img src="{{mars.JPL_url}}" > 
+      
+    </div>
+    <div class="col-md-5">
+      <h1>Mars Facts</h1>  
+      {{mars.table | safe}} 
+      
+    </div>
+  
+  <br>&#160</br>
+  <br>
+  <br>
+  <br>
+  
+  <div class="row" >
+    <div class="col-md-12"><h1 class= 'hemisphere'>  </h1></div>
+    <div class="row">
+      <div class="col-md-5"></div>
+      
+      <div class="col-md-7"><h1>Mars Hemisphere</h1></div>
+      
+    </div>   
+    
+    <br>
+    <br>
+    <br>
+    <div class="text-center">  
+      
+      <a href="#" target="_blank"><img src="{{mars.mars_hemis[0].img_url}}" width= '30%'class="rounded " alt="temp"></a>
+      <a href="#" target="_blank"><img src="{{mars.mars_hemis[1].img_url}}" width= '30%' class="rounded " alt="humi"></a>
+      
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-3"><h5>{{mars.mars_hemis[0].title}} </h5></div>
+        <div class="col-md-3"><h5>{{mars.mars_hemis[1].title}}</h5></div>
+        <div class="col-md-3"></div>
+      </div>   
+    </div> 
+    <div class="text-center">  
+      
+      <a href="#" target="_blank"><img src="{{mars.mars_hemis[2].img_url}}" width= '30%'class="rounded " alt="temp"></a>
+      <a href="#" target="_blank"><img src="{{mars.mars_hemis[3].img_url}}" width= '30%' class="rounded " alt="humi"></a>
+      
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-3"><h5>{{mars.mars_hemis[2].title}} </h5></div>
+        <div class="col-md-3"><h5>{{mars.mars_hemis[3].title}}</h5></div>
+        <div class="col-md-3"></div>
+      </div>   
+    </div> 
+  
+</body>
+
+</html>
